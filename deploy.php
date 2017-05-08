@@ -6,9 +6,9 @@ require_once('rabbitMQLib.inc');
 $client = new rabbitMQClient("deployRabbitServer.ini","deployServer");
 $request = array();
 $request['type'] = "deploy";
-$request['package'] = "BE";
+$request['package'] = "API";
 $request['tier'] = "qa";
-$request['packageName'] = $argv[4];
+$request['packageName'] = "apiPackage-v";
 $response = $client->send_request($request);
 print_r($response);
 

@@ -12,6 +12,6 @@ packageNum=`./testRabbitMQClient.php apiPackage-v | xargs`
 	scp -r apiPackage-v"$packageNum".tar.gz uzair@192.168.2.30:/home/uzair/Packages/.	
 	cp apiPackage-v"$packageNum".tar.gz apiPackages/
 	rm apiPackage-v"$packageNum".tar.gz
-	php updatePackage.php "$packageNum"
+	php updatePackage.php apiPackage-v"$packageNum".tar.gz "$packageNum"
 	echo "Packaging Complete! Sent to Deployment Server."
 
